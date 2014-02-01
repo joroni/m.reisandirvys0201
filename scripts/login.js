@@ -1,43 +1,31 @@
 // JavaScript Document
-$('#tf_page_login').live('pageshow',function(){
-  try {
-    // do some stuff when the page is ready, if you want...
-  }
-  catch (error) { alert("tf_page_login - " + error); }
-});
 
-$('#tf_page_login_submit').live('click',function(){
-  
-  var name = $('#tf_page_login_name').val();
+$('#page_login_submit').live('click',function(){
+  var name = $('#page_login_name').val();
   if (!name) { alert('Please enter your user name.'); return false; }
-  
-  var pass = $('#tf_page_login_pass').val();
+  var pass = $('#page_login_pass').val();
   if (!pass) { alert('Please enter your password.'); return false; }
   
   // BEGIN: drupal services user login (warning: don't use https if you don't have ssl setup)
   $.ajax({
-      //url: "https://www.tylerfrankenstein.com/my_services_path/user/login.json",
-	  url: "http://www.m.reisandirvys.com/drupalgap/user/login.json",
+     // url: "http://10.0.2.2/my_drupal_site/?q=my_services/user/login.json",
+	 url: "http://www.m.reisandirvys.com/?q=drupalgap/user/login.json",
       type: 'post',
-      data: 'username=' + name + '&password=' + pass,
+      data: 'username=' + encodeURIComponent(name) + '&password=' + encodeURIComponent(pass),
       dataType: 'json',
       error: function(XMLHttpRequest, textStatus, errorThrown) {
-        alert('tf_page_login_submit - failed to login');
+        alert('page_login_submit - failed to login');
         console.log(JSON.stringify(XMLHttpRequest));
         console.log(JSON.stringify(textStatus));
         console.log(JSON.stringify(errorThrown));
       },
       success: function (data) {
-        document.location.href="../index.html#tf_page_dashboard";
+       $.mobile.changePage("index.html", "slideup");
       }
   });
   // END: drupal services user login
   return false;
 });
-
-
-
-
 
 // Obtain session token.
 /*$.ajax({

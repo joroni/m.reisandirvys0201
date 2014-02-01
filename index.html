@@ -14,42 +14,51 @@
 
 <body>
 
-<div data-role="page" id="tf_page_dashboard">
-  <script type="text/javascript" charset="utf-8" src="scripts/dashboard.js"></script>
 
-  <div data-role="header">
-    <h1>Dashboard</h1>
-  </div><!-- /header -->
+<div data-role="page" id="page_dashboard">
 
-  <div data-role="content">
-    <p><a href="#tf_page_login" data-role="button" id="tf_login_button">Login</a></p>
-    <p><a href="#" data-role="button" id="tf_logout_button">Logout</a></p>
-  </div><!-- /content -->
-
-</div><!-- /page -->
-
-<div data-role="page" id="tf_page_login">
-  <script type="text/javascript" charset="utf-8" src="scripts/login.js"></script>
-
-  <div data-role="header">
-    <h1>Login</h1>
-  </div><!-- /header -->
-
-  <div data-role="content" class='content'>
-    <div>
-      <label for="tf_page_login_name">Username</label>
-      <input type="text" id="tf_page_login_name" />
-    </div>
-    <div>
-      <label for="tf_page_login_pass">Password</label>
-      <input type="password" id="tf_page_login_pass" />
-    </div>
-    <fieldset>
-      <div><button type="button" data-theme="b" id="tf_page_login_submit">Login</button></div>
-    </fieldset>
-  </div><!-- /content -->
+	 <script type="text/javascript" charset="utf-8" src="scripts/dashboard.js"></script>
+    
+     <div data-role="header">
+       <h1>Dashboard</h1>
+     </div><!-- /header -->
+    
+     <div data-role="content">
+       <p><a href="#page_login" data-role="button" id="button_login">Login</a></p>
+       <p><a href="#" data-role="button" id="button_logout">Logout</a></p>
+     </div><!-- /content -->
 
 </div><!-- /page -->
+
+
+<div data-role="page" id="page_login">
+
+	  <script type="text/javascript" charset="utf-8" src="scripts/login.js"></script>
+    
+      <div data-role="header">
+        <h1>Login</h1>
+      </div><!-- /header -->
+    
+      <div data-role="content" class='content'>
+        <div>
+          <label for="page_login_name">Username</label>
+          <input type="text" id="page_login_name" />
+        </div>
+        <div>
+          <label for="page_login_pass">Password</label>
+          <input type="password" id="page_login_pass" />
+        </div>
+        <fieldset>
+          <div><button type="button" data-theme="b" id="page_login_submit">Login</button></div>
+        </fieldset>
+      </div><!-- /content -->
+    
+    </div><!-- /page -->
+
+
+
+
+
 
 </body>
 
